@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_frag"
+    app:startDestination="@id/blankFragment">
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.projetotp3.BlankFragment"
+        android:label="pagina1"
+        tools:layout="@layout/pagina1" >
+        <action
+            android:id="@+id/action_blankFragment_to_pagina2"
+            app:destination="@id/pagina2" />
+        <argument
+            android:name="teste"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina2"
+        android:name="com.example.projetotp3.pagina2"
+        android:label="pagina2"
+        tools:layout="@layout/pagina2" >
+        <action
+            android:id="@+id/action_pagina2_to_pagina3"
+            app:destination="@id/pagina3" />
+        <argument
+            android:name="testando2"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina3"
+        android:name="com.example.projetotp3.pagina3"
+        android:label="fragment_pagina3"
+        tools:layout="@layout/pagina3" >
+        <action
+            android:id="@+id/action_pagina3_to_pagina4"
+            app:destination="@id/pagina4" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina4"
+        android:name="com.example.projetotp3.pagina4"
+        android:label="fragment_pagina4"
+        tools:layout="@layout/pagina4" >
+        <action
+            android:id="@+id/action_pagina4_to_pagina5"
+            app:destination="@id/pagina5" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina5"
+        android:name="com.example.projetotp3.pagina5"
+        android:label="fragment_pagina5"
+        tools:layout="@layout/pagina5" >
+        <action
+            android:id="@+id/action_pagina5_to_pagina6"
+            app:destination="@id/pagina6" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina6"
+        android:name="com.example.projetotp3.pagina6"
+        android:label="fragment_pagina6"
+        tools:layout="@layout/pagina6" >
+        <action
+            android:id="@+id/action_pagina6_to_pagina7"
+            app:destination="@id/pagina7" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina7"
+        android:name="com.example.projetotp3.pagina7"
+        android:label="fragment_pagina7"
+        tools:layout="@layout/pagina7" >
+        <action
+            android:id="@+id/action_pagina7_to_pagina8"
+            app:destination="@id/pagina8" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina8"
+        android:name="com.example.projetotp3.pagina8"
+        android:label="fragment_pagina8"
+        tools:layout="@layout/pagina8" >
+        <action
+            android:id="@+id/action_pagina8_to_pagina9"
+            app:destination="@id/pagina9" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagina9"
+        android:name="com.example.projetotp3.pagina9"
+        android:label="fragment_pagina9"
+        tools:layout="@layout/pagina9" >
+        <action
+            android:id="@+id/action_pagina9_to_last_pag"
+            app:destination="@id/last_pag" />
+    </fragment>
+    <activity
+        android:id="@+id/last_pag"
+        android:name="com.example.projetotp3.last_pag"
+        android:label="activity_last_pag"
+        tools:layout="@layout/activity_last_pag" />
+</navigation>

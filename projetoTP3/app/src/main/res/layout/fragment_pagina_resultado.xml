@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background ="@color/verde_claro"
+    tools:context=".paginaResultado">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="@color/verde"
+        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/btn_Sobre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="32dp"
+        android:backgroundTint="@color/verde_claro"
+        android:text="Cilck aqui para saber mais sobre o Banco" />
+
+</FrameLayout>

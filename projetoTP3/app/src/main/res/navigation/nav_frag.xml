@@ -14,9 +14,9 @@
             android:id="@+id/action_blankFragment_to_pagina2"
             app:destination="@id/pagina2" />
         <argument
-            android:name="teste"
+            android:name="agr1"
             app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/pagina2"
@@ -27,7 +27,7 @@
             android:id="@+id/action_pagina2_to_pagina3"
             app:destination="@id/pagina3" />
         <argument
-            android:name="testando2"
+            android:name="agr2"
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
@@ -39,6 +39,10 @@
         <action
             android:id="@+id/action_pagina3_to_pagina4"
             app:destination="@id/pagina4" />
+        <argument
+            android:name="agr3"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/pagina4"
@@ -48,6 +52,10 @@
         <action
             android:id="@+id/action_pagina4_to_pagina5"
             app:destination="@id/pagina5" />
+        <argument
+            android:name="agr4"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/pagina5"
@@ -57,6 +65,10 @@
         <action
             android:id="@+id/action_pagina5_to_pagina6"
             app:destination="@id/pagina6" />
+        <argument
+            android:name="agr5"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/pagina6"
@@ -66,6 +78,10 @@
         <action
             android:id="@+id/action_pagina6_to_pagina7"
             app:destination="@id/pagina7" />
+        <argument
+            android:name="agr6"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/pagina7"
@@ -75,6 +91,10 @@
         <action
             android:id="@+id/action_pagina7_to_pagina8"
             app:destination="@id/pagina8" />
+        <argument
+            android:name="agr7"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/pagina8"
@@ -84,19 +104,40 @@
         <action
             android:id="@+id/action_pagina8_to_pagina9"
             app:destination="@id/pagina9" />
+        <argument
+            android:name="agr8"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/pagina9"
         android:name="com.example.projetotp3.pagina9"
         android:label="fragment_pagina9"
         tools:layout="@layout/pagina9" >
+        <argument
+            android:name="resultado"
+            app:argType="integer"
+            android:defaultValue="0" />
         <action
-            android:id="@+id/action_pagina9_to_last_pag"
-            app:destination="@id/last_pag" />
+            android:id="@+id/action_pagina9_to_paginaResultado"
+            app:destination="@id/paginaResultado" />
     </fragment>
     <activity
         android:id="@+id/last_pag"
         android:name="com.example.projetotp3.last_pag"
         android:label="activity_last_pag"
         tools:layout="@layout/activity_last_pag" />
+    <fragment
+        android:id="@+id/paginaResultado"
+        android:name="com.example.projetotp3.paginaResultado"
+        android:label="fragment_pagina_resultado"
+        tools:layout="@layout/fragment_pagina_resultado" >
+        <argument
+            android:name="test"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_paginaResultado_to_last_pag"
+            app:destination="@id/last_pag" />
+    </fragment>
 </navigation>

@@ -1,23 +1,19 @@
 package com.example.projetotp3
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.projetotp3.model.opcoes
 import com.example.projetotp3.model.resposta
-import com.example.projetotp3.model.respostas
 
 
 class BlankFragment : Fragment() {
 
-    var respotas = respostas()
+    var op = opcoes()
     var testes = com.example.projetotp3.model.testes()
 
 
@@ -37,6 +33,8 @@ class BlankFragment : Fragment() {
 
         var resp = -1
         val button = view.findViewById<Button>(R.id.btn_next)
+        var list_agr : MutableList<Int> = mutableListOf(0)
+        var agr = 0
 
         button.isEnabled = false
 
@@ -47,25 +45,41 @@ class BlankFragment : Fragment() {
 
         btn1?.setOnClickListener {
             resp = 1
+            agr = 0
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
         btn2?.setOnClickListener {
             resp =1
+            agr = 2
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
         btn3?.setOnClickListener {
             resp = 1
+            agr = 3
+            list_agr.add(agr)
             verificabtn(resp,button)
 
         }
         btn4?.setOnClickListener {
             resp = 1
+            agr = 4
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
 
 
         button?.setOnClickListener {
-            findNavController().navigate(R.id.action_blankFragment_to_pagina2, null)
+
+            val ultimo = list_agr.last()
+            println(ultimo)
+
+            findNavController().navigate(R.id.action_blankFragment_to_pagina2, Bundle().apply {
+                putInt("agr1",ultimo)
+            })
+
+
 
         }
 

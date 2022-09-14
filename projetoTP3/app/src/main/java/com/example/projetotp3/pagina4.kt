@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import com.example.projetotp3.model.respostas
+import com.example.projetotp3.model.opcoes
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
 
 class pagina4 : Fragment() {
 
-    var respotas = respostas()
+    var respotas = opcoes()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,8 +29,11 @@ class pagina4 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         var resp = -1
         val button = view.findViewById<Button>(R.id.btn_next)
+        var list_agr : MutableList<Int> = mutableListOf(0)
+        var agr = 0
 
         button.isEnabled = false
 
@@ -41,14 +44,20 @@ class pagina4 : Fragment() {
 
         btn1?.setOnClickListener {
             resp = 1
+            agr = 0
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
         btn2?.setOnClickListener {
             resp =1
+            agr = 2
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
         btn3?.setOnClickListener {
             resp = 1
+            agr = 4
+            list_agr.add(agr)
             verificabtn(resp,button)
 
         }
@@ -56,7 +65,17 @@ class pagina4 : Fragment() {
 
 
         button?.setOnClickListener {
-            findNavController().navigate(R.id.action_pagina4_to_pagina5, null)
+
+            val agrRec = requireArguments().getInt("agr3")
+
+            val ultimo = (list_agr.last() + agrRec)
+            println(ultimo)
+
+            findNavController().navigate(R.id.action_pagina4_to_pagina5, Bundle().apply {
+                putInt("agr4",ultimo)
+            })
+
+
 
         }
 

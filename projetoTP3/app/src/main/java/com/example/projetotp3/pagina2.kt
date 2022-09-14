@@ -1,17 +1,13 @@
 package com.example.projetotp3
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.example.projetotp3.model.resposta
-import com.example.projetotp3.model.respostas
+import com.example.projetotp3.model.opcoes
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,7 +16,7 @@ private const val ARG_PARAM2 = "param2"
 
 class pagina2 : Fragment() {
 
-    var respotas = respostas()
+    var op = opcoes()
     var testes = com.example.projetotp3.model.testes()
 
     override fun onCreateView(
@@ -38,6 +34,8 @@ class pagina2 : Fragment() {
 
         var resp = -1
         val button = view.findViewById<Button>(R.id.btn_next)
+        var list_agr : MutableList<Int> = mutableListOf(0)
+        var agr = 0
 
         button.isEnabled = false
 
@@ -48,25 +46,43 @@ class pagina2 : Fragment() {
 
         btn1?.setOnClickListener {
             resp = 1
+            agr = 0
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
         btn2?.setOnClickListener {
             resp =1
+            agr = 2
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
         btn3?.setOnClickListener {
             resp = 1
+            agr = 4
+            list_agr.add(agr)
             verificabtn(resp,button)
 
         }
         btn4?.setOnClickListener {
             resp = 1
+            agr = 5
+            list_agr.add(agr)
             verificabtn(resp,button)
         }
 
 
         button?.setOnClickListener {
-            findNavController().navigate(R.id.action_pagina2_to_pagina3, null)
+
+            val agrRec = requireArguments().getInt("agr1")
+
+            val ultimo = (list_agr.last() + agrRec )
+            println(ultimo)
+
+            findNavController().navigate(R.id.action_pagina2_to_pagina3, Bundle().apply {
+                putInt("agr2",ultimo)
+            })
+
+
 
         }
 
